@@ -11,4 +11,5 @@ export const colors = {
   danger: "red",
   painterWhite: "#f2ebdd",
   logout: "#ffe66d",
+  dark: "#0c0c0c",
 };
