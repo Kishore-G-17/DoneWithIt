@@ -6,6 +6,7 @@ import ListingDetailsScreen from "./app/screens/ListingDetailsScreen";
 import MessagesScreen from "./app/screens/MessagesScreen";
 import AccountScreen from "./app/screens/AccountScreen";
 import ListingsScreen from "./app/screens/ListingsScreen";
+import LoginScreen from "./app/screens/LoginScreen";
 
 import Screen from "./app/components/Screen";
 import AppTextInput from "./app/components/AppTextInput";
@@ -42,17 +43,19 @@ export default function App() {
 
     //<ListingsScreen />
 
-    <Screen style={{ padding: 20, paddingTop: 50 }}>
-      <Switch
-        value={isNew}
-        onValueChange={(newValue) => setNewValue(newValue)}
-      />
-      <AppPicker
-        icon="apps"
-        items={categories}
-        selectedItem={category}
-        onSelectItem={(item) => setCategory(item)}
-      />
-    </Screen>
+    // <Screen style={{ padding: 20, paddingTop: 50 }}>
+    //   <Switch
+    //     value={isNew}
+    //     onValueChange={(newValue) => setNewValue(newValue)}
+    //   />
+    //   <AppPicker
+    //     icon="apps"
+    //     items={categories}
+    //     selectedItem={category}
+    //     onSelectItem={(item) => setCategory(item)}
+    //   />
+    // </Screen>
+
+    <LoginScreen />
   );
 }

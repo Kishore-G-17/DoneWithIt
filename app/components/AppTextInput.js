@@ -4,9 +4,7 @@ import { MaterialCommunityIcons } from "@expo/vector-icons";
 
 import defaultStyles from "../config/styles";
 
-function AppTextInput({ icon, ...otherProps }) {
-  const [username, setUserName] = useState("");
-
+function AppTextInput({ icon, style, ...otherProps }) {
   return (
     <View style={styles.container}>
       <MaterialCommunityIcons
@@ -15,13 +13,8 @@ function AppTextInput({ icon, ...otherProps }) {
         style={styles.icon}
         color={defaultStyles.colors.fadeInColorForSubTitle}
       />
-      <TextInput
-        {...otherProps}
-        style={defaultStyles.text}
-        onChangeText={(text) => setUserName(text)}
-      />
+      <TextInput {...otherProps} style={[defaultStyles.text, style]} />
     </View>
-    //<Text>{username}</Text> /* this is wrong */
   );
 }
 
