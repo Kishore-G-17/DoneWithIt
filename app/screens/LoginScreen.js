@@ -7,6 +7,7 @@ import Screen from "../components/Screen";
 import AppTextInput from "../components/AppTextInput";
 import AppButton from "../components/AppButton";
 import AppText from "../components/AppText";
+import ErrorHandler from "../components/ErrorHandler";
 
 import { colors } from "../config/colors";
 
@@ -36,9 +37,11 @@ function LoginScreen(props) {
               placeholder="Enter email"
               style={styles.input}
             />
-            {touched.email && (
-              <AppText style={{ color: colors.danger }}>{errors.email}</AppText>
-            )}
+            {
+              <ErrorHandler visible={touched.email && errors.email}>
+                {errors.email}
+              </ErrorHandler>
+            }
             <AppTextInput
               autoCaptilize="none"
               autoCorrect={false}
@@ -49,11 +52,11 @@ function LoginScreen(props) {
               secureTextEntry
               style={styles.input}
             />
-            {touched.password && (
-              <AppText style={{ color: colors.danger }}>
+            {
+              <ErrorHandler visible={touched.password && errors.password}>
                 {errors.password}
-              </AppText>
-            )}
+              </ErrorHandler>
+            }
             <AppButton onPress={handleSubmit} style={styles.button}>
               Login
             </AppButton>
