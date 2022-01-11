@@ -7,7 +7,7 @@ import Screen from "../components/Screen";
 import AppTextInput from "../components/AppTextInput";
 import AppButton from "../components/AppButton";
 import AppText from "../components/AppText";
-import ErrorHandler from "../components/ErrorHandler";
+import AppFormField from "../components/AppFormField";
 
 import { colors } from "../config/colors";
 
@@ -25,38 +25,38 @@ function LoginScreen(props) {
         onSubmit={(values) => console.log(values)}
         validationSchema={validationSchema}
       >
-        {({ handleChange, handleSubmit, errors, setFieldTouched, touched }) => (
+        {({ handleSubmit }) => (
           <>
-            <AppTextInput
+            <AppFormField
               autoCaptilize="none"
               autoCorrect={false}
               icon="email"
+              name="email"
               keyboardType="email-address"
-              onBlur={() => setFieldTouched("email")}
-              onChangeText={handleChange("email")}
               placeholder="Enter email"
               style={styles.input}
             />
-            {
-              <ErrorHandler visible={touched.email && errors.email}>
-                {errors.email}
-              </ErrorHandler>
-            }
-            <AppTextInput
+
+            {/* {touched.email && errors.email && (
+              <AppText style={{ color: colors.danger }}>{errors.email}</AppText>
+            )} */}
+
+            <AppFormField
               autoCaptilize="none"
               autoCorrect={false}
               icon="lock"
-              onBlur={() => setFieldTouched("password")}
-              onChangeText={handleChange("password")}
+              name="password"
               placeholder="Enter password"
               secureTextEntry
               style={styles.input}
             />
-            {
-              <ErrorHandler visible={touched.password && errors.password}>
+
+            {/* {touched.password && errors.password && (
+              <AppText style={{ color: colors.danger }}>
                 {errors.password}
-              </ErrorHandler>
-            }
+              </AppText>
+            )} */}
+
             <AppButton onPress={handleSubmit} style={styles.button}>
               Login
             </AppButton>

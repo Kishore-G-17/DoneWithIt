@@ -4,8 +4,12 @@ import { StyleSheet, View } from "react-native";
 import AppText from "./AppText";
 import { colors } from "../config/colors";
 
-function ErrorHandler({ children, visible }) {
-  if (!visible) return null;
+function ErrorHandler({ children, error, visible, comp }) {
+  //   console.log("comp: ", comp);
+  //   console.log("error: ", error);
+  //   console.log("visible: ", visible);
+
+  if (!error || !visible) return null;
   return (
     <View>
       <AppText style={styles.errorMsg}>{children}</AppText>
