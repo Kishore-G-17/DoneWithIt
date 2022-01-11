@@ -2,8 +2,8 @@ import React from "react";
 import { StyleSheet } from "react-native";
 import { useFormikContext } from "formik";
 
-import AppButton from "./AppButton";
-import { colors } from "../config/colors";
+import AppButton from "../AppButton";
+import { colors } from "../../config/colors";
 
 function SubmitButton({ children }) {
   const { handleSubmit } = useFormikContext();
