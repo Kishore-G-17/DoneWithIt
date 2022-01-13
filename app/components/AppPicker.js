@@ -15,21 +15,41 @@ import defaultStyles from "../config/styles";
 import AppText from "./AppText";
 import PickerItem from "./PickerItem";
 
-function AppTextInput({ icon, items, selectedItem, onSelectItem }) {
-  const [modalVisible, setModalVisible] = useState(false);
+import { colors } from "../config/colors";
 
+function AppPicker({
+  icon,
+  items,
+  selectedItem,
+  onSelectItem,
+  placeholder,
+  PickerItemComponent = PickerItem,
+  noOfColumns = 1,
+}) {
+  const [modalVisible, setModalVisible] = useState(false);
+  // console.log(PickerItemComponent);
   return (
     //<React.Fragment></React.Fragment>
     <>
       <TouchableWithoutFeedback onPress={() => setModalVisible(!modalVisible)}>
         <View style={styles.container}>
-          <MaterialCommunityIcons
-            name={icon}
-            size={25}
-            style={styles.icon}
-            color={defaultStyles.colors.fadeInColorForSubTitle}
-          />
-          <AppText style={{ flex: 1 }}>{selectedItem.label}</AppText>
+          {icon && (
+            <MaterialCommunityIcons
+              name={icon}
+              size={25}
+              style={styles.icon}
+              color={defaultStyles.colors.fadeInColorForSubTitle}
+            />
+          )}
+          {selectedItem ? (
+            <AppText style={{ flex: 1, color: colors.dark }}>
+              {selectedItem.label}
+            </AppText>
+          ) : (
+            <AppText style={{ flex: 1, color: colors.medium }}>
+              {placeholder}
+            </AppText>
+          )}
           <MaterialCommunityIcons
             name="chevron-down"
             size={25}
@@ -42,9 +62,11 @@ function AppTextInput({ icon, items, selectedItem, onSelectItem }) {
         <Button title="close" onPress={() => setModalVisible(!modalVisible)} />
         <FlatList
           data={items}
-          keyExtractor={(item) => item.id.toString()}
+          keyExtractor={(item) => item.value.toString()}
+          numColumns={noOfColumns}
           renderItem={({ item }) => (
-            <PickerItem
+            <PickerItemComponent
+              item={item}
               label={item.label}
               onPress={() => {
                 setModalVisible(!modalVisible);
@@ -72,4 +94,4 @@ const styles = StyleSheet.create({
   },
 });
 
-export default AppTextInput;
+export default AppPicker;

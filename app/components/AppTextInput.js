@@ -13,7 +13,11 @@ function AppTextInput({ icon, style, ...otherProps }) {
         style={styles.icon}
         color={defaultStyles.colors.fadeInColorForSubTitle}
       />
-      <TextInput {...otherProps} style={[defaultStyles.text, style]} />
+      <TextInput
+        placeholderTextColor={defaultStyles.colors.medium}
+        style={[defaultStyles.text, style]}
+        {...otherProps}
+      />
     </View>
   );
 }

@@ -8,6 +8,7 @@ export const colors = {
   signupBkColor: "#40e0d0",
   fadeInColorForSubTitle: "#6e6969",
   light: "#f8f4f4",
+  medium: "#6e6969",
   danger: "red",
   painterWhite: "#f2ebdd",
   logout: "#ffe66d",

@@ -7,6 +7,7 @@ import MessagesScreen from "./app/screens/MessagesScreen";
 import AccountScreen from "./app/screens/AccountScreen";
 import ListingsScreen from "./app/screens/ListingsScreen";
 import LoginScreen from "./app/screens/LoginScreen";
+import ListingEditScreen from "./app/screens/ListingEditScreen";
 
 import Screen from "./app/components/Screen";
 import AppTextInput from "./app/components/AppTextInput";
@@ -56,6 +57,8 @@ export default function App() {
     //   />
     // </Screen>
 
-    <LoginScreen />
+    // <LoginScreen />
+
+    <ListingEditScreen />
   );
 }

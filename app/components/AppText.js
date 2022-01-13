@@ -9,7 +9,7 @@ function AppText({ children, style }) {
 
 const styles = StyleSheet.create({
   text: {
-    fontSize: 18,
+    fontSize: 15,
     color: colors.black,
     // ...Platform.select({
     //   android: {
