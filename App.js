@@ -8,41 +8,22 @@ import AccountScreen from "./app/screens/AccountScreen";
 import ListingsScreen from "./app/screens/ListingsScreen";
 import LoginScreen from "./app/screens/LoginScreen";
 import ListingEditScreen from "./app/screens/ListingEditScreen";
-
 import Screen from "./app/components/Screen";
-import AppTextInput from "./app/components/AppTextInput";
 import AppPicker from "./app/components/AppPicker";
+import ImageInputList from "./app/components/ImageInputList";
+import ImageInput from "./app/components/ImageInput";
 
 export default function App() {
-  const [isNew, setNewValue] = useState(false);
-
-  const categories = [
-    {
-      label: "Furniture",
-      id: 1,
-    },
-    {
-      label: "Cameras",
-      id: 2,
-    },
-    {
-      label: "Electronics",
-      id: 3,
-    },
-  ];
-
-  const [category, setCategory] = useState(categories[0]);
-
   return (
-    //<WelcomeScreen />
+    // <WelcomeScreen />
 
-    //<ListingDetailsScreen />
+    // <ListingDetailsScreen />
 
     // <MessagesScreen />
 
     // <AccountScreen />
 
-    //<ListingsScreen />
+    // <ListingsScreen />
 
     // <Screen style={{ padding: 20, paddingTop: 50 }}>
     //   <Switch
@@ -58,7 +39,6 @@ export default function App() {
     // </Screen>
 
     // <LoginScreen />
-
     <ListingEditScreen />
   );
 }

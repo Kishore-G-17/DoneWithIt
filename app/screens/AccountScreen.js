@@ -57,7 +57,7 @@ function AccountScreen(props) {
 
 const styles = StyleSheet.create({
   container0: {
-    backgroundColor: colors.painterWhite,
+    backgroundColor: colors.light,
     padding: 15,
   },
   container1: {
