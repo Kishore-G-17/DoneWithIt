@@ -17,7 +17,7 @@ function SubmitButton({ children }) {
 const styles = StyleSheet.create({
   button: {
     marginTop: 30,
-    backgroundColor: colors.secondary,
+    backgroundColor: colors.loginBkColor,
     alignSelf: "center",
   },
 });

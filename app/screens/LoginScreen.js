@@ -2,6 +2,7 @@ import React from "react";
 import { StyleSheet, Image } from "react-native";
 import * as Yup from "yup";
 
+import { colors } from "../config/colors";
 import Screen from "../components/Screen";
 import { AppForm, AppFormField, SubmitButton } from "../components/forms";
 
@@ -60,6 +61,7 @@ const styles = StyleSheet.create({
   container: {
     padding: 20,
     paddingTop: 50,
+    backgroundColor: colors.white,
   },
   logo: {
     width: 200,

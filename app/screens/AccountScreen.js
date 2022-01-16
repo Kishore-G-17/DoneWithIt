@@ -12,16 +12,18 @@ const datas = [
     name: "format-list-bulleted",
     title: "My listings",
     bkColor: colors.primary,
+    targetScreen: "messages",
   },
   {
     dataId: 2,
     name: "email",
     title: "My messages",
     bkColor: colors.secondary,
+    targetScreen: "messages",
   },
 ];
 
-function AccountScreen(props) {
+function AccountScreen({ navigation }) {
   return (
     <Screen style={styles.container0}>
       <View style={styles.container1}>
@@ -41,6 +43,7 @@ function AccountScreen(props) {
                 <Icon name={item.name} backgroundColor={item.bkColor} />
               }
               title={item.title}
+              onPress={() => navigation.navigate(item.targetScreen)}
             />
           )}
         />
